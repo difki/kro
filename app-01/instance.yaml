@@ -4,5 +4,6 @@ metadata:
   name: my-application-instance
 spec:
   name: my-awesome-app
+  replicas: 5
   ingress:
     enabled: true
