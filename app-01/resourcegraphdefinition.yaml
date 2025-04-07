@@ -28,7 +28,7 @@ spec:
         metadata:
           name: ${schema.spec.name} # Use the name provided by user
         spec:
-          replicas: 2
+          replicas: ${schema.spec.replicas}
           selector:
             matchLabels:
               app: ${schema.spec.name}
@@ -49,7 +49,7 @@ spec:
         metadata:
           name: ${schema.spec.name}-01 # Use the name provided by user
         spec:
-          replicas: 4
+          replicas: ${schema.spec.replicas}
           selector:
             matchLabels:
               app: ${schema.spec.name}-01
