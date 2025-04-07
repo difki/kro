@@ -42,7 +42,27 @@ spec:
                   image: ${schema.spec.image} # Use the image provided by user
                   ports:
                     - containerPort: 80
-
+    - id: deployment-01
+      template:
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: ${schema.spec.name}-01 # Use the name provided by user
+        spec:
+          replicas: 3
+          selector:
+            matchLabels:
+              app: ${schema.spec.name}-01
+          template:
+            metadata:
+              labels:
+                app: ${schema.spec.name}-01
+            spec:
+              containers:
+                - name: ${schema.spec.name}
+                  image: ${schema.spec.image} # Use the image provided by user
+                  ports:
+                    - containerPort: 80
     - id: service
       template:
         apiVersion: v1
